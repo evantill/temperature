@@ -43,6 +43,7 @@ module.exports = function (grunt) {
       livereload: {
         options: {
           port: 9000,
+          hostname: '0.0.0.0',
           middleware: function (connect) {
             return [
               lrSnippet,
@@ -108,11 +109,12 @@ module.exports = function (grunt) {
       options: {
         sassDir: '<%= yeoman.app %>/styles',
         cssDir: '.tmp/styles',
-        imagesDir: 'images',
+        imagesDir: '<%= yeoman.app %>/images',
         javascriptsDir: '<%= yeoman.app %>/scripts',
         fontsDir: '<%= yeoman.app %>/styles/fonts',
         importPath: 'app/components',
-        relativeAssets: true
+        config: '.compass.rb'
+        //relativeAssets: true
       },
       dist: {},
       server: {
