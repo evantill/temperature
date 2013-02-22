@@ -1,0 +1,384 @@
+{
+    "response": {
+        "version": "0.1",
+        "termsofService": "http://www.wunderground.com/weather/api/d/terms.html",
+        "features": {
+            "forecast": 1
+        }
+    },
+    "forecast": {
+        "txt_forecast": {
+            "date": "1:00 AM CET",
+            "forecastday": [
+                {
+                    "period": 0,
+                    "icon": "partlycloudy",
+                    "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+                    "title": "mercredi",
+                    "fcttext": "Partiellement nuageux dans la matinée, ensuite couvert. Température maximale 43F. Vents en provenance du ENE à 10-15 mph.",
+                    "fcttext_metric": "Partiellement nuageux dans la matinée, ensuite couvert. Température maximale 6C. Vents en provenance du ENE à 15-25 km/h.",
+                    "pop": "0"
+                },
+                {
+                    "period": 1,
+                    "icon": "partlycloudy",
+                    "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+                    "title": "mercredi soir",
+                    "fcttext": "Partiellement nuageux. Température minimale 25F avec un facteur vent de 19. Vents en provenance du ENE à 10-15 mph.",
+                    "fcttext_metric": "Partiellement nuageux. Température minimale -4C. Vents en provenance du ENE à 15-20 km/h.",
+                    "pop": "0"
+                },
+                {
+                    "period": 2,
+                    "icon": "partlycloudy",
+                    "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+                    "title": "jeudi",
+                    "fcttext": "Partiellement nuageux. Température maximale 36F avec un facteur vent de 18. Vents en provenance du NE à 15-20 mph.",
+                    "fcttext_metric": "Partiellement nuageux. Température maximale 2C avec un facteur vent de -8. Vents en provenance du NE à 20-30 km/h.",
+                    "pop": "0"
+                },
+                {
+                    "period": 3,
+                    "icon": "partlycloudy",
+                    "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+                    "title": "jeudi soir",
+                    "fcttext": "Partiellement nuageux. Température minimale 25F avec un facteur vent de 19. Vents en provenance du NE à 10-15 mph.",
+                    "fcttext_metric": "Partiellement nuageux. Température minimale -4C. Vents en provenance du NE à 15-25 km/h.",
+                    "pop": "0"
+                },
+                {
+                    "period": 4,
+                    "icon": "partlycloudy",
+                    "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+                    "title": "vendredi",
+                    "fcttext": "Partiellement nuageux dans la matinée, ensuite couvert. Température maximale 32F avec un facteur vent de 16. Vents en provenance du NE à 15-20 mph.",
+                    "fcttext_metric": "Partiellement nuageux dans la matinée, ensuite couvert. Température maximale 0C avec un facteur vent de -9. Vents en provenance du NE à 25-30 km/h.",
+                    "pop": "0"
+                },
+                {
+                    "period": 5,
+                    "icon": "partlycloudy",
+                    "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+                    "title": "vendredi soir",
+                    "fcttext": "Couvert dans la soirée, ensuite partiellement nuageux. Température minimale 23F avec un facteur vent de 16. Vents en provenance du NNE à 10-15 mph.",
+                    "fcttext_metric": "Couvert dans la soirée, ensuite partiellement nuageux. Température minimale -5C avec un facteur vent de -9. Vents en provenance du NNE à 20-25 km/h.",
+                    "pop": "0"
+                },
+                {
+                    "period": 6,
+                    "icon": "partlycloudy",
+                    "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+                    "title": "samedi",
+                    "fcttext": "Ciel dégagé dans la matinée, ensuite couvert. Température maximale 37F avec un facteur vent de 14. Vents en provenance du NNE à 15-20 mph.",
+                    "fcttext_metric": "Ciel dégagé dans la matinée, ensuite couvert. Température maximale 3C avec un facteur vent de -10. Vents en provenance du NNE à 25-30 km/h.",
+                    "pop": "0"
+                },
+                {
+                    "period": 7,
+                    "icon": "partlycloudy",
+                    "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+                    "title": "samedi soir",
+                    "fcttext": "Partiellement nuageux dans la soirée, ensuite ciel dégagé. Température minimale 25F avec un facteur vent de 18. Vents en provenance du NNE à 10-15 mph.",
+                    "fcttext_metric": "Partiellement nuageux dans la soirée, ensuite ciel dégagé. Température minimale -4C avec un facteur vent de -8. Vents en provenance du NNE à 20-25 km/h.",
+                    "pop": "0"
+                }
+            ]
+        },
+        "simpleforecast": {
+            "forecastday": [
+                {
+                    "date": {
+                        "epoch": "1361394000",
+                        "pretty": "10:00 PM CET on February 20, 2013",
+                        "day": 20,
+                        "month": 2,
+                        "year": 2013,
+                        "yday": 50,
+                        "hour": 22,
+                        "min": "00",
+                        "sec": 0,
+                        "isdst": "0",
+                        "monthname": "février",
+                        "weekday_short": "mer",
+                        "weekday": "mercredi",
+                        "ampm": "PM",
+                        "tz_short": "CET",
+                        "tz_long": "Europe/Paris"
+                    },
+                    "period": 1,
+                    "high": {
+                        "fahrenheit": "43",
+                        "celsius": "6"
+                    },
+                    "low": {
+                        "fahrenheit": "25",
+                        "celsius": "-4"
+                    },
+                    "conditions": "Partiellement nuageux",
+                    "icon": "partlycloudy",
+                    "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+                    "skyicon": "partlycloudy",
+                    "pop": 0,
+                    "qpf_allday": {
+                        "in": 0,
+                        "mm": 0
+                    },
+                    "qpf_day": {
+                        "in": 0,
+                        "mm": 0
+                    },
+                    "qpf_night": {
+                        "in": 0,
+                        "mm": 0
+                    },
+                    "snow_allday": {
+                        "in": 0,
+                        "cm": 0
+                    },
+                    "snow_day": {
+                        "in": 0,
+                        "cm": 0
+                    },
+                    "snow_night": {
+                        "in": 0,
+                        "cm": 0
+                    },
+                    "maxwind": {
+                        "mph": 14,
+                        "kph": 22,
+                        "dir": "ENE",
+                        "degrees": 65
+                    },
+                    "avewind": {
+                        "mph": 12,
+                        "kph": 19,
+                        "dir": "ENE",
+                        "degrees": 64
+                    },
+                    "avehumidity": 69,
+                    "maxhumidity": 87,
+                    "minhumidity": 59
+                },
+                {
+                    "date": {
+                        "epoch": "1361480400",
+                        "pretty": "10:00 PM CET on February 21, 2013",
+                        "day": 21,
+                        "month": 2,
+                        "year": 2013,
+                        "yday": 51,
+                        "hour": 22,
+                        "min": "00",
+                        "sec": 0,
+                        "isdst": "0",
+                        "monthname": "février",
+                        "weekday_short": "jeu",
+                        "weekday": "jeudi",
+                        "ampm": "PM",
+                        "tz_short": "CET",
+                        "tz_long": "Europe/Paris"
+                    },
+                    "period": 2,
+                    "high": {
+                        "fahrenheit": "36",
+                        "celsius": "2"
+                    },
+                    "low": {
+                        "fahrenheit": "25",
+                        "celsius": "-4"
+                    },
+                    "conditions": "Partiellement nuageux",
+                    "icon": "partlycloudy",
+                    "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+                    "skyicon": "partlycloudy",
+                    "pop": 0,
+                    "qpf_allday": {
+                        "in": 0,
+                        "mm": 0
+                    },
+                    "qpf_day": {
+                        "in": 0,
+                        "mm": 0
+                    },
+                    "qpf_night": {
+                        "in": 0,
+                        "mm": 0
+                    },
+                    "snow_allday": {
+                        "in": 0,
+                        "cm": 0
+                    },
+                    "snow_day": {
+                        "in": 0,
+                        "cm": 0
+                    },
+                    "snow_night": {
+                        "in": 0,
+                        "cm": 0
+                    },
+                    "maxwind": {
+                        "mph": 16,
+                        "kph": 26,
+                        "dir": "NE",
+                        "degrees": 53
+                    },
+                    "avewind": {
+                        "mph": 14,
+                        "kph": 22,
+                        "dir": "NE",
+                        "degrees": 51
+                    },
+                    "avehumidity": 54,
+                    "maxhumidity": 76,
+                    "minhumidity": 44
+                },
+                {
+                    "date": {
+                        "epoch": "1361566800",
+                        "pretty": "10:00 PM CET on February 22, 2013",
+                        "day": 22,
+                        "month": 2,
+                        "year": 2013,
+                        "yday": 52,
+                        "hour": 22,
+                        "min": "00",
+                        "sec": 0,
+                        "isdst": "0",
+                        "monthname": "février",
+                        "weekday_short": "vend",
+                        "weekday": "vendredi",
+                        "ampm": "PM",
+                        "tz_short": "CET",
+                        "tz_long": "Europe/Paris"
+                    },
+                    "period": 3,
+                    "high": {
+                        "fahrenheit": "32",
+                        "celsius": "0"
+                    },
+                    "low": {
+                        "fahrenheit": "23",
+                        "celsius": "-5"
+                    },
+                    "conditions": "Partiellement nuageux",
+                    "icon": "partlycloudy",
+                    "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+                    "skyicon": "partlycloudy",
+                    "pop": 0,
+                    "qpf_allday": {
+                        "in": 0,
+                        "mm": 0
+                    },
+                    "qpf_day": {
+                        "in": 0,
+                        "mm": 0
+                    },
+                    "qpf_night": {
+                        "in": 0,
+                        "mm": 0
+                    },
+                    "snow_allday": {
+                        "in": 0,
+                        "cm": 0
+                    },
+                    "snow_day": {
+                        "in": 0,
+                        "cm": 0
+                    },
+                    "snow_night": {
+                        "in": 0,
+                        "cm": 0
+                    },
+                    "maxwind": {
+                        "mph": 18,
+                        "kph": 29,
+                        "dir": "NE",
+                        "degrees": 42
+                    },
+                    "avewind": {
+                        "mph": 15,
+                        "kph": 24,
+                        "dir": "NE",
+                        "degrees": 40
+                    },
+                    "avehumidity": 58,
+                    "maxhumidity": 74,
+                    "minhumidity": 47
+                },
+                {
+                    "date": {
+                        "epoch": "1361653200",
+                        "pretty": "10:00 PM CET on February 23, 2013",
+                        "day": 23,
+                        "month": 2,
+                        "year": 2013,
+                        "yday": 53,
+                        "hour": 22,
+                        "min": "00",
+                        "sec": 0,
+                        "isdst": "0",
+                        "monthname": "février",
+                        "weekday_short": "sam",
+                        "weekday": "samedi",
+                        "ampm": "PM",
+                        "tz_short": "CET",
+                        "tz_long": "Europe/Paris"
+                    },
+                    "period": 4,
+                    "high": {
+                        "fahrenheit": "37",
+                        "celsius": "3"
+                    },
+                    "low": {
+                        "fahrenheit": "25",
+                        "celsius": "-4"
+                    },
+                    "conditions": "Partiellement nuageux",
+                    "icon": "partlycloudy",
+                    "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+                    "skyicon": "partlycloudy",
+                    "pop": 0,
+                    "qpf_allday": {
+                        "in": 0,
+                        "mm": 0
+                    },
+                    "qpf_day": {
+                        "in": 0,
+                        "mm": 0
+                    },
+                    "qpf_night": {
+                        "in": 0,
+                        "mm": 0
+                    },
+                    "snow_allday": {
+                        "in": 0,
+                        "cm": 0
+                    },
+                    "snow_day": {
+                        "in": 0,
+                        "cm": 0
+                    },
+                    "snow_night": {
+                        "in": 0,
+                        "cm": 0
+                    },
+                    "maxwind": {
+                        "mph": 18,
+                        "kph": 29,
+                        "dir": "NNE",
+                        "degrees": 32
+                    },
+                    "avewind": {
+                        "mph": 15,
+                        "kph": 24,
+                        "dir": "NNE",
+                        "degrees": 24
+                    },
+                    "avehumidity": 59,
+                    "maxhumidity": 74,
+                    "minhumidity": 45
+                }
+            ]
+        }
+    }
+}

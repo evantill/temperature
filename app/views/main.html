@@ -45,55 +45,79 @@
 	margin-top:1em;
 }
 
-</style>
+.centrage {		
+	text-align: center;
+}
 
+</style>
+	
 <div class="container">
     <div class="page-header">
     	<h1>Températures à Halloville <small>Stage Alexandre Belin</small></h1>
     </div>
-
 	<div class="row-fluid">
 		<div class="span4 well">
 			<div class="therm_location">
-				<i class="icon-globe icon-4x"></i>	
+				<div class="centrage">	
+				<img  ng-src="{{img_temp}}"/>		
+					<!--<img ng-hide="!outsideWeather" ng-src="{{outsideWeather.icon_url}}"/>
+					<i ng-show="!outsideWeather" class="icon-globe icon-4x"></i>-->
+				</div>
 			</div>
 			<div class="therm_graph">
-				<img src="images/thermometer.png" width="50%">	
+				<div class="centrage">
+					<img src="images/thermometer.png" width="50%">	
+				</div>
 			</div>		
-			<div class="therm_info">			
-				<i class="icon-arrow-down icon-2x"></i>
-				<span>19.0°C</span>
-				<i class="icon-refresh icon-2x"></i>
+			<div class="therm_info">
+				<div class="centrage">
+				<i class="icon-arrow-down icon-2x"></i>				
+				<span><strong>{{outside_temp}}°C</strong></span>
+				<span ng-click="refreshOutSideWeather()"><i class="btn icon-refresh icon"></i></span>
+			</div>
 			</div>
 		</div>
-
 		<div class="span4 well">
 			<div class="therm_location">
-				<i class="icon-home icon-4x"></i>	
+				<div class="centrage"><i class="icon-home icon-4x"></i></div>
 			</div>
 			<div class="therm_graph">
-				<img src="images/thermometer.png" width="50%">	
+				<div class="centrage">
+					<img src="images/thermometer.png" width="50%">	
+			</div>
 			</div>		
-			<div class="therm_info">			
-				<i class="icon-arrow-up icon-2x"></i>
-				<span>19.0°C</span>
-				<i class="icon-refresh icon-2x"></i>			
+			<div class="therm_info">
+				<div class="centrage">
+					<i class="icon-arrow-up icon-2x"></i>
+					<span><strong>{{inside_temp}}°C</strong></span>
+					<i class="icon-refresh icon-2x"></i>			
+				</div>
 			</div>
 		</div>
-
 		<div class="span4 well">
 			<div class="therm_location">
-				<i class="icon-fire icon-4x"></i>	
+				<div class="centrage">
+					<i class="icon-fire icon-4x"></i>	
+				</div>
 			</div>
 			<div class="therm_graph">
-				<img src="images/thermometer.png" width="50%">	
+				<div class="centrage">
+					<img src="images/thermometer.png" width="50%">	
+				</div>
 			</div>		
-			<div class="therm_info">			
-				<i class="icon-circle icon-2x"></i>
-				<span>19.0°C</span>							
-				<i class="icon-minus icon-2x"></i>
-				<i class="icon-plus icon-2x"></i>						
+			<div class="therm_info">
+				<div class="centrage">		
+					<i class="icon-circle icon-2x"></i>
+					<span><strong>{{heat_temp}}°C</strong></span>
+					<i class="icon-minus icon-2x"></i>
+					<i class="icon-plus icon-2x"></i>
+					<span ng-click="refreshZybaseInfo()"><i class="btn icon-refresh icon"></i></span>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<pre class="prettyprint lang-json">{{responseXX}}</pre>
+<pre class="prettyprint lang-json">{{zybaseData}}</pre>
+
