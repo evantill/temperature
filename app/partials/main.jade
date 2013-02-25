@@ -1,0 +1,53 @@
+.container
+	.page-header
+		h1 Températures à Halloville <small>(Stage Alexandre Belin)</small>
+
+	.row-fluid
+		.span4.well
+			.therm_location
+				.centrage
+					img(ng-src="{{outsideWeather}}")
+					img(ng-hide="!outsideWeather", ng-src="{{outsideWeather.icon_url}}")
+					i.icon-globe.icon-4x(ng-show="!outsideWeather")
+			.therm_graph
+				.centrage
+					//thermometer(temperature="25")
+					img(src="images/thermometer.png",width="50%")					
+					//canvas#outsideThermometerCanvas(width="200" ,height="900")
+			.therm_info
+				.centrage
+					i.icon-arrow-down.icon-2x
+					span: strong {{outsideWeather.temperature}}°C				
+					span(ng-click="refreshOutSideWeather()"): i.btn.icon-refresh.icon"
+
+		.span4.well
+			.therm_location
+				.centrage
+					i.icon-home.icon-4x
+			.therm_graph
+				.centrage					
+					img(src="images/thermometer.png",width="50%")										
+			.therm_info
+				.centrage
+					i.icon-arrow-up.icon-2x
+					span: strong {{insideTemp}}°C				
+					span(ng-click="refreshOutSideWeather()"): i.btn.icon-refresh.icon"
+
+		.span4.well
+			.therm_location
+				.centrage
+					i.icon-fire.icon-4x
+			.therm_graph
+				.centrage					
+					img(src="images/thermometer.png",width="50%")										
+			.therm_info
+				.centrage
+					i.icon-circle.icon-2x
+					span: strong {{heat_temp}}°C
+					i.icon-minus.icon-2x
+					i.icon-plus.icon-2x
+					span(ng-click="refreshZybaseInfo()"): i.btn.icon-refresh.icon
+
+	//pre.prettyprint.lang-json {{debug}}
+
+	//pre.prettyprint.lang-json {{zybaseData}}
