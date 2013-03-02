@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<doc zb="ZiBASE00542b">
+<x10tab>0000000000000000000000000000000000000000000000000000000000000000</x10tab>
+<zwtab>0000000000000000000000000000000000000000000000000000000000000000</zwtab>
+<zwpre>FC03000000000000000000000000000000000000000000000000000000000000</zwpre>
+<zwerr>0000000000000000000000000000000000000000000000000000000000000000</zwerr>
+<zwlowbatt>0000000000000000000000000000000000000000000000000000000000000000</zwlowbatt>
+<vars>
+<var num="0" val="0"/>
+<var num="1" val="0"/>
+<var num="2" val="0"/>
+<var num="3" val="0"/>
+<var num="4" val="0"/>
+<var num="5" val="0"/>
+<var num="6" val="0"/>
+<var num="7" val="0"/>
+<var num="8" val="0"/>
+<var num="9" val="0"/>
+<var num="10" val="0"/>
+<var num="11" val="0"/>
+<var num="12" val="0"/>
+<var num="13" val="0"/>
+<var num="14" val="0"/>
+<var num="15" val="-1"/>
+<var num="16" val="-1"/>
+<var num="17" val="-1"/>
+<var num="18" val="-1"/>
+<var num="19" val="-1"/>
+<var num="20" val="-1"/>
+<var num="21" val="-1"/>
+<var num="22" val="-1"/>
+<var num="23" val="-1"/>
+<var num="24" val="-1"/>
+<var num="25" val="-1"/>
+<var num="26" val="-1"/>
+<var num="27" val="-1"/>
+<var num="28" val="-1"/>
+<var num="29" val="297"/>
+<var num="30" val="-1"/>
+<var num="31" val="32"/>
+</vars>
+<cals>
+<cal num="1" val="0xFFFFFFFF"/>
+<cal num="2" val="0xFFFFFFFF"/>
+<cal num="3" val="0xFFFFFFFF"/>
+<cal num="4" val="0xFFFFFFFF"/>
+<cal num="5" val="0xFFFFFFFF"/>
+<cal num="6" val="0xFFFFFFFF"/>
+<cal num="7" val="0xFFFFFFFF"/>
+<cal num="8" val="0xFFFFFFFF"/>
+<cal num="9" val="0xFFFFFFFF"/>
+<cal num="10" val="0xFFFFFFFF"/>
+<cal num="11" val="0xFFFFFFFF"/>
+<cal num="12" val="0xFFFFFFFF"/>
+<cal num="13" val="0xFFFFFFFF"/>
+<cal num="14" val="0xFFFFFFFF"/>
+<cal num="15" val="0xFFFFFFFF"/>
+<cal num="16" val="0xFFFFFFFF"/>
+</cals>
+<idx>1</idx>
+<evs>
+<ev type="7" pro="OS" id="439193090" gmt="1361493206" v1="195" v2="23" lowbatt="0"/>
+</evs>
+<plat>zibase.net</plat>
+</doc>

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('xxxApp', [])
+var thermometerApp = angular.module('thermometerApp', [])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -11,3 +11,8 @@ angular.module('xxxApp', [])
         redirectTo: '/'
       });
   });
+
+thermometerApp.config(['$httpProvider', function($httpProvider) {
+    delete $httpProvider.defaults.headers.common["X-Requested-With"]
+}]);
+

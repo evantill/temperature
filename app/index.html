@@ -11,12 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/main.css">
-    <link href="scripts/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="scripts/google-code-prettify/prettify.js"></script>
-
-    <script type="text/javascript" src="scripts/x2js-v1.0.11/xml2json.js"></script>
+    
+    <script type="text/javascript" src="components/x2js-v1.0.11/xml2json.js"></script>
+    <script type="text/javascript" src="scripts/services/thermometer.js"></script>
   </head>
-  <body ng-app="xxxApp"  onload="prettyPrint()">
+  <body ng-app="thermometerApp">
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
@@ -37,6 +36,8 @@
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/services/weather.js"></script>
+    <script src="scripts/directives/thermometer.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

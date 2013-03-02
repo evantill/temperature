@@ -50,7 +50,7 @@
 }
 
 </style>
-	
+		
 <div class="container">
     <div class="page-header">
     	<h1>Températures à Halloville <small>Stage Alexandre Belin</small></h1>
@@ -66,13 +66,15 @@
 			</div>
 			<div class="therm_graph">
 				<div class="centrage">
-					<img src="images/thermometer.png" width="50%">	
+					<thermometer temperature="25"/>
+					<img src="images/thermometer.png" width="50%">					
+					<canvas id="outsideThermometerCanvas" width="200" height="900"></canvas>
 				</div>
 			</div>		
 			<div class="therm_info">
 				<div class="centrage">
 				<i class="icon-arrow-down icon-2x"></i>				
-				<span><strong>{{outside_temp}}°C</strong></span>
+				<span><strong>{{outsideTemp}}°C</strong></span>
 				<span ng-click="refreshOutSideWeather()"><i class="btn icon-refresh icon"></i></span>
 			</div>
 			</div>
@@ -118,6 +120,6 @@
 	</div>
 </div>
 
-<pre class="prettyprint lang-json">{{responseXX}}</pre>
+<pre class="prettyprint lang-json">{{response}}</pre>
 <pre class="prettyprint lang-json">{{zybaseData}}</pre>
 
