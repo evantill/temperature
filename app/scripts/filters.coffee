@@ -11,3 +11,8 @@ angular.module('app.filters', [])
   (text) ->
     String(text).replace(/\%VERSION\%/mg, version)
 ])
+
+.filter('default', () ->
+  (text, defaultValue) ->
+    if(angular.isDefined(text)) then text else defaultValue
+)

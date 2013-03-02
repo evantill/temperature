@@ -2,21 +2,39 @@
 
 ### Sevices ###
 angular.module('app.services', [])
-.factory('version', -> "0.1")
-
-.service 'WeatherService', ($http) ->
+.service('WeatherService', ($http) ->
   weatherConditions: (callback) ->
-    pays = 'France'
-    ville = 'Paris'
-    tokenId = 'ed98933e537e6811'
-    url = 'http://api.wunderground.com/api/'+tokenId+'/conditions/lang:FR/q/'+pays+'/'+ville+'.json?callback=JSON_CALLBACK'
+    halloville =
+      longitude: 6.866666793823242
+      latitude: 48.54999923706055
+    ville = halloville
+    tokenId = "ed98933e537e6811"
+    url = "http://api.wunderground.com/api/#{tokenId}/conditions/forecast/lang:FR/q/#{ville.latitude},#{ville.longitude}.json?callback=JSON_CALLBACK"
+
+    tomorrowTrend=(forecasts) ->
+      console.debug("tomorrowTrend #{JSON.stringify(forecasts)}")
+      todayMin = parseInt(forecasts[0].low.celsius)
+      todayMax = parseInt(forecasts[0].high.celsius)
+      tomorrowMin = parseInt(forecasts[1].low.celsius)
+      tomorrowMax = parseInt(forecasts[1].high.celsius)
+      todayMean= (todayMax+todayMin)/2
+      tomorrowMean=(tomorrowMax-tomorrowMin)/2
+      console.debug(tomorrowMean-todayMean)
+      tomorrowMean-todayMean
 
     $http.jsonp(url).then( (response) ->
-      ###response.data.forecast.simpleforecast###
+      current = response.data.current_observation
+      current.weather
+      current.temp_c
+      current.feelslike_c
+      current.icon
+      current.icon_url
       weather =
         temperature: response.data.current_observation.temp_c
-        icon_url: 'http://icons.wxug.com/i/c/i/'+response.data.current_observation.icon+'.gif'
+        feelslike: response.data.current_observation.feelslike_c
+        icon_url: "http://icons.wxug.com/i/c/i/#{response.data.current_observation.icon}.gif"
         icon_alt: response.data.current_observation.weather
-
+        trend: tomorrowTrend(response.data.forecast.simpleforecast.forecastday)
       callback(weather)
     )
+)
