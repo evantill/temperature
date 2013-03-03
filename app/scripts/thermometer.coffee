@@ -56,7 +56,6 @@ class ThermometerCanvasCtrl
     return ctx
 
   draw: =>
-    console.debug("draw loaded=#{@backgroundLoader.loaded} temperature=#{@temperature}")
     if @context
       @drawBackground() if @backgroundLoader.loaded
       @drawFluid(@temperature) if @temperature?

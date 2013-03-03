@@ -7,8 +7,9 @@ angular.module('app.controllers', ['app.services'])
   '$scope'
   '$http'
   'WeatherService'
+  'ZybaseService'
 
-  ($scope, $http, WeatherService) ->
+  ($scope, $http, WeatherService, ZybaseService) ->
     refreshOutSideWeatherFn = ->
       WeatherService.weatherConditions( (weather) ->
         $scope.outsideWeather = weather
@@ -16,4 +17,12 @@ angular.module('app.controllers', ['app.services'])
 
     $scope.refreshOutSideWeather = refreshOutSideWeatherFn
     $scope.$on("$viewContentLoaded",refreshOutSideWeatherFn)
+
+    refreshInSideWeatherFn = ->
+      ZybaseService.sensorsValue( 29,(value) ->
+        $scope.homeTemperature = value/10
+      )
+
+    $scope.refreshInSideWeather = refreshInSideWeatherFn
+    $scope.$on("$viewContentLoaded",refreshInSideWeatherFn)
 ])

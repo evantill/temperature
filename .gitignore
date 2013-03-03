@@ -8,7 +8,6 @@ vendor
 
 .project
 .settings
-.idea/*
 
 _public
 node_modules/*

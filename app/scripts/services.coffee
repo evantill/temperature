@@ -12,14 +12,12 @@ angular.module('app.services', [])
     url = "http://api.wunderground.com/api/#{tokenId}/conditions/forecast/lang:FR/q/#{ville.latitude},#{ville.longitude}.json?callback=JSON_CALLBACK"
 
     tomorrowTrend=(forecasts) ->
-      console.debug("tomorrowTrend #{JSON.stringify(forecasts)}")
       todayMin = parseInt(forecasts[0].low.celsius)
       todayMax = parseInt(forecasts[0].high.celsius)
       tomorrowMin = parseInt(forecasts[1].low.celsius)
       tomorrowMax = parseInt(forecasts[1].high.celsius)
       todayMean= (todayMax+todayMin)/2
       tomorrowMean=(tomorrowMax-tomorrowMin)/2
-      console.debug(tomorrowMean-todayMean)
       tomorrowMean-todayMean
 
     $http.jsonp(url).then( (response) ->
@@ -36,5 +34,17 @@ angular.module('app.services', [])
         icon_alt: response.data.current_observation.weather
         trend: tomorrowTrend(response.data.forecast.simpleforecast.forecastday)
       callback(weather)
+    )
+)
+.service('ZybaseService', ($http)->
+  sensorsStatus: (callback)->
+    url = "http://localhost:3333/json/sensors.xml"
+    x2js= new X2JS()
+    $http.get(url).then( (response) ->
+      callback(x2js.xml_str2json(response.data))
+    )
+  sensorsValue: (sensorNumber,callback)->
+    @sensorsStatus( (data)->
+      callback(data.doc.vars["var"][sensorNumber]._val)
     )
 )

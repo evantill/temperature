@@ -13,7 +13,7 @@
             .therm_info
                 .centrage
                     trend-icon(trend-value="outsideWeather.trend")
-                    span: strong {{outsideWeather.temperature|number:1}} °C
+                    span.temperature: strong {{outsideWeather.temperature|number:1}} °C
                     span(ng-click="refreshOutSideWeather()"): i.icon-refresh.icon
         .span4.well
             .therm_location
@@ -21,12 +21,12 @@
                     i.icon-home.icon-4x
             .therm_graph
                 .centrage
-                    thermometer-canvas(temperature="house.temperature",width=180/2,height=895/2,positive-color="rgb(200,0,0)",negative-color="rgb(0, 102, 198)")
+                    thermometer-canvas(temperature="homeTemperature",width=180/2,height=895/2,positive-color="rgb(200,0,0)",negative-color="rgb(0, 102, 198)")
             .therm_info
                 .centrage
-                    i.icon-arrow-up.icon-2x
-                    span: strong {{insideTemp}}°C
-                    span(ng-click="refreshOutSideWeather()"): i.icon-refresh.icon
+                    //i.icon-arrow-up.icon-2x
+                    span.temperature: strong {{homeTemperature|number:1}}°C
+                    span(ng-click="refreshInSideWeather()"): i.icon-refresh.icon
         .span4.well
             .therm_location
                 .centrage
@@ -37,7 +37,7 @@
             .therm_info
                 .centrage
                     i.icon-circle.icon-2x
-                    span: strong {{heat_temp}}°C
+                    span.temperature: strong {{heat_temp}}°C
                     i.icon-minus.icon-2x
                     i.icon-plus.icon-2x
                     span(ng-click="refreshZybaseInfo()"): i.icon-refresh.icon
