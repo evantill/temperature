@@ -21,8 +21,11 @@ negative-temperature {
   color: #0066c6;
 }
 .therm_info * {
-  padding-right: 0.5em;
   font-size: 1.2em;
+}
+.therm_info .temperature {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
 }
 .footer {
   background-color: whitesmoke;
@@ -7269,8 +7272,11 @@ negative-temperature {
   color: #0066c6;
 }
 .therm_info * {
-  padding-right: 0.5em;
   font-size: 1.2em;
+}
+.therm_info .temperature {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
 }
 .footer {
   background-color: whitesmoke;

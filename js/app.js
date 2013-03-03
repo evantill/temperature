@@ -41,15 +41,22 @@ App.config([
 */
 
 angular.module('app.controllers', ['app.services']).controller('AppCtrl', [
-  '$scope', '$http', 'WeatherService', function($scope, $http, WeatherService) {
-    var refreshOutSideWeatherFn;
+  '$scope', '$http', 'WeatherService', 'ZybaseService', function($scope, $http, WeatherService, ZybaseService) {
+    var refreshInSideWeatherFn, refreshOutSideWeatherFn;
     refreshOutSideWeatherFn = function() {
       return WeatherService.weatherConditions(function(weather) {
         return $scope.outsideWeather = weather;
       });
     };
     $scope.refreshOutSideWeather = refreshOutSideWeatherFn;
-    return $scope.$on("$viewContentLoaded", refreshOutSideWeatherFn);
+    $scope.$on("$viewContentLoaded", refreshOutSideWeatherFn);
+    refreshInSideWeatherFn = function() {
+      return ZybaseService.sensorsValue(29, function(value) {
+        return $scope.homeTemperature = value / 10;
+      });
+    };
+    $scope.refreshInSideWeather = refreshInSideWeatherFn;
+    return $scope.$on("$viewContentLoaded", refreshInSideWeatherFn);
   }
 ]);
 'use strict';
@@ -145,14 +152,12 @@ angular.module('app.services', []).service('WeatherService', function($http) {
       url = "http://api.wunderground.com/api/" + tokenId + "/conditions/forecast/lang:FR/q/" + ville.latitude + "," + ville.longitude + ".json?callback=JSON_CALLBACK";
       tomorrowTrend = function(forecasts) {
         var todayMax, todayMean, todayMin, tomorrowMax, tomorrowMean, tomorrowMin;
-        console.debug("tomorrowTrend " + (JSON.stringify(forecasts)));
         todayMin = parseInt(forecasts[0].low.celsius);
         todayMax = parseInt(forecasts[0].high.celsius);
         tomorrowMin = parseInt(forecasts[1].low.celsius);
         tomorrowMax = parseInt(forecasts[1].high.celsius);
         todayMean = (todayMax + todayMin) / 2;
         tomorrowMean = (tomorrowMax - tomorrowMin) / 2;
-        console.debug(tomorrowMean - todayMean);
         return tomorrowMean - todayMean;
       };
       return $http.jsonp(url).then(function(response) {
@@ -171,6 +176,22 @@ angular.module('app.services', []).service('WeatherService', function($http) {
           trend: tomorrowTrend(response.data.forecast.simpleforecast.forecastday)
         };
         return callback(weather);
+      });
+    }
+  };
+}).service('ZybaseService', function($http) {
+  return {
+    sensorsStatus: function(callback) {
+      var url, x2js;
+      url = "http://localhost:3333/json/sensors.xml";
+      x2js = new X2JS();
+      return $http.get(url).then(function(response) {
+        return callback(x2js.xml_str2json(response.data));
+      });
+    },
+    sensorsValue: function(sensorNumber, callback) {
+      return this.sensorsStatus(function(data) {
+        return callback(data.doc.vars["var"][sensorNumber]._val);
       });
     }
   };
@@ -269,7 +290,6 @@ ThermometerCanvasCtrl = (function() {
   };
 
   ThermometerCanvasCtrl.prototype.draw = function() {
-    console.debug("draw loaded=" + this.backgroundLoader.loaded + " temperature=" + this.temperature);
     if (this.context) {
       if (this.backgroundLoader.loaded) {
         this.drawBackground();
