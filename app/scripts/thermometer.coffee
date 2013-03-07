@@ -26,32 +26,32 @@ class ImageLoader
 
 #used to draw thermometer on an HTML canvas
 class ThermometerCanvasCtrl
-  imageWidth:180
-  imageHeight:895
+  imageWidth: 180
+  imageHeight: 895
   #positiveColor:"rgb(200,0,0)"
   #negativeColor:"rgb(0, 102, 198)"
 
-  constructor: (@backgroundImageUrl,@canvasId,@positiveColor,@negativeColor) ->
-    @temperature=undefined
+  constructor: (@backgroundImageUrl, @canvasId, @positiveColor, @negativeColor) ->
+    @temperature = undefined
     @backgroundLoader = new ImageLoader(backgroundImageUrl)
     @backgroundLoader.onLoad(=>@draw())
 
   init: ->
     @backgroundLoader.load()
-    @canvas=document.getElementById(@canvasId)
-    @context=@scaleAndCenter(@canvas.getContext('2d'))
+    @canvas = document.getElementById(@canvasId)
+    @context = @scaleAndCenter(@canvas.getContext('2d'))
     @draw()
 
   scaleAndCenter: (ctx) ->
-    xScale=ctx.canvas.height/@imageHeight
-    yScale=ctx.canvas.width/@imageWidth
-    scale=Math.min(xScale,yScale)
-    xOffset=(ctx.canvas.width-@imageWidth*scale)/2
-    yOffset=(ctx.canvas.height-@imageHeight*scale)/2
+    xScale=ctx.canvas.height / @imageHeight
+    yScale=ctx.canvas.width / @imageWidth
+    scale=Math.min(xScale, yScale)
+    xOffset=(ctx.canvas.width - @imageWidth * scale) / 2
+    yOffset=(ctx.canvas.height - @imageHeight * scale) / 2
     ctx.fillStyle = "#FFFFFF"
-    ctx.fillRect(0,0,ctx.canvas.width,ctx.canvas.height)
-    ctx.translate(xOffset,yOffset)
-    ctx.scale(scale,scale)
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+    ctx.translate(xOffset, yOffset)
+    ctx.scale(scale, scale)
     ctx.translate(-25, -10)
     return ctx
 
@@ -69,7 +69,7 @@ class ThermometerCanvasCtrl
     yPos = 7
     yOffset = 686
     fluidWidth = 35
-    @context.fillStyle = if temperature>0 then @positiveColor else @negativeColor
+    @context.fillStyle = if temperature > 0 then @positiveColor else @negativeColor
     #Draw rectangle from -30 to yTemperature
     @context.fillRect(xPos, yTemperature, yPos, yOffset - yTemperature)
     #Draw rectangle from botton to -30
@@ -89,9 +89,9 @@ class ThermometerCanvasCtrl
 
   setTemperature: (value) ->
     if angular.isNumber(value)
-      if value>50
+      if value > 50
         @temperature = 50
-      else if value<-30
+      else if value < -30
         @temperature = -30
       else
         @temperature = value

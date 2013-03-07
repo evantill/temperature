@@ -15,9 +15,9 @@ App.config([
   ($routeProvider, $locationProvider) ->
     $routeProvider
       .when('/', {templateUrl: '/partials/main.html'})
-    
-      # Catch all
-      # .otherwise({redirectTo: '/'})
+
+    # Catch all
+    # .otherwise({redirectTo: '/'})
 
     # Without server side support html5 must be disabled.
     $locationProvider.html5Mode(true)

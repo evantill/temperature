@@ -31,6 +31,7 @@
     "uglify-js-brunch": ">= 1.5 < 1.6",
     "clean-css-brunch": ">= 1.5 < 1.6",
 
+    "brunch-plugin-tutorial": "*",
     "bower-stylesheet-brunch": "*",
     "bower-javascript-brunch": "*",
     "bower-asserts-brunch": "*",

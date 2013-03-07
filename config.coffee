@@ -4,7 +4,7 @@ exports.config =
       max_line_length:
         value: 128
         level: "ignore"
-      
+
   # See docs at http://brunch.readthedocs.org/en/latest/config.html.
   conventions:
     ignored: /^(vendor.*\.less|.+node_modules.+|.+_.+\.+)$/
@@ -13,20 +13,21 @@ exports.config =
     wrapper: false
   paths:
     public: '_public'
+    vendor: 'vendor'
   files:
     javascripts:
       joinTo:
         'js/app.js': /^app/
-        'js/vendor.js': /^vendor/
+        'js/vendor.js': /^(vendor)/
         'test/scenarios.js': /^test(\/|\\)e2e/
       order:
         before: [
           'vendor/console-polyfill/index.js'
           'vendor/jquery/jquery.js'
-          'vendor/angular/angular.js'          
-          'vendor/angular-resource/angular-resource.js'          
-          'vendor/angular-cookies/angular-cookies.js'          
-          'vendor/angular-sanitize/angular-sanitize.js'                    
+          'vendor/angular/angular.js'
+          'vendor/angular-resource/angular-resource.js'
+          'vendor/angular-cookies/angular-cookies.js'
+          'vendor/angular-sanitize/angular-sanitize.js'
           'vendor/bootstrap/docs/assets/js/bootstrap.js'
         ]
 
@@ -35,7 +36,7 @@ exports.config =
         'css/app.css': /^(app|vendor)/
 
     templates:
-      joinTo: 
+      joinTo:
         'js/dontUseMe' : /^app/ # dirty hack for Jade compiling.
 
   plugins:
@@ -46,6 +47,14 @@ exports.config =
       locals: {}
 
     bower:
+      dryRun: true
+      force: true
+      component:
+        canvg:
+          source:
+            main: "toto"
+            scripts: ["toto.js","rgbcolor.js"]
+            images: "xxx.jpg"
       extend:
         "bootstrap" : 'vendor/bootstrap/docs/assets/js/bootstrap.js'
         "angular-mocks": []
